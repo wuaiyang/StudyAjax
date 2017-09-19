@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var aA =document.getElementsByTagName('a');
+			var oUl =document.getElementById('ul1');
+			var aLi = oUl.getElementsByTagName('li');
+
+			for(var i=0;i<aA.length;i++){
+				aA[i].onclick = function(){
+					if(mj(this.innerHTML)){
+                        var oLi = document.createElement('li');
+                        oLi.innerHTML = this.innerHTML;
+                        oUl.appendChild(oLi);
+					}else{
+
+					}
+				}
+			}
+
+			function mj(html){
+               var result = true;
+
+               for(var i=0; i<aLi.length;i++){
+                  if(aLi[i].innerHTML == html){
+                  	result = false;
+                  }
+               }
+
+               return result;
+			}
+		}
+	</script>
+</head>
+<body>
+	<a href="javascript:;">北京</a>
+	<a href="javascript:;">上海</a>
+	<a href="javascript:;">深圳</a>
+	<a href="javascript:;">广州</a>
+	<a href="javascript:;">天津</a>
+	<a href="javascript:;">重庆</a>
+	<a href="javascript:;">杭州</a>
+	<ul id="ul1">
+		
+	</ul>
+</body>
+</html>
